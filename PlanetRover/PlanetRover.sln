@@ -21,6 +21,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanetRover.Module.RoverMod
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanetRover.Module.Common", "PlanetRover.Module.Common\PlanetRover.Module.Common.csproj", "{A0B19982-3163-4EF3-B8A0-7D9B8FB5A133}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanetRover.Test.PlanetModuleTest", "PlanetRover.Test.PlanetModuleTest\PlanetRover.Test.PlanetModuleTest.csproj", "{6DCA849B-F9DD-46A0-B916-1ADE6F264EF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanetRover.Test.CommonTest", "PlanetRover.Test.CommonTest\PlanetRover.Test.CommonTest.csproj", "{ED4A6C3F-8F92-42C3-9115-7D1F0F8BA4F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +51,14 @@ Global
 		{A0B19982-3163-4EF3-B8A0-7D9B8FB5A133}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A0B19982-3163-4EF3-B8A0-7D9B8FB5A133}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A0B19982-3163-4EF3-B8A0-7D9B8FB5A133}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DCA849B-F9DD-46A0-B916-1ADE6F264EF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DCA849B-F9DD-46A0-B916-1ADE6F264EF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DCA849B-F9DD-46A0-B916-1ADE6F264EF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DCA849B-F9DD-46A0-B916-1ADE6F264EF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED4A6C3F-8F92-42C3-9115-7D1F0F8BA4F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED4A6C3F-8F92-42C3-9115-7D1F0F8BA4F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED4A6C3F-8F92-42C3-9115-7D1F0F8BA4F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED4A6C3F-8F92-42C3-9115-7D1F0F8BA4F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,5 +69,7 @@ Global
 		{7474F3DE-C6AB-4DDF-B093-9336A14CBA8E} = {EE8E035F-3A88-4D23-A0E3-23BD719829FA}
 		{FAB0765B-95FD-4A17-9500-FDD70D35F8BC} = {EE8E035F-3A88-4D23-A0E3-23BD719829FA}
 		{A0B19982-3163-4EF3-B8A0-7D9B8FB5A133} = {EE8E035F-3A88-4D23-A0E3-23BD719829FA}
+		{6DCA849B-F9DD-46A0-B916-1ADE6F264EF8} = {519CAFDB-430E-43C2-95A5-60E51C071195}
+		{ED4A6C3F-8F92-42C3-9115-7D1F0F8BA4F5} = {519CAFDB-430E-43C2-95A5-60E51C071195}
 	EndGlobalSection
 EndGlobal

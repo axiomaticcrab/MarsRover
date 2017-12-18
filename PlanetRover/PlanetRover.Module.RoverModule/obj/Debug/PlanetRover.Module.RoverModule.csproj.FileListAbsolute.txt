@@ -3,3 +3,7 @@ C:\Users\hp\Documents\GitHub\HbMarsRover\PlanetRover\PlanetRover.Module.RoverMod
 C:\Users\hp\Documents\GitHub\HbMarsRover\PlanetRover\PlanetRover.Module.RoverModule\obj\Debug\PlanetRover.Module.RoverModule.csprojResolveAssemblyReference.cache
 C:\Users\hp\Documents\GitHub\HbMarsRover\PlanetRover\PlanetRover.Module.RoverModule\obj\Debug\PlanetRover.Module.RoverModule.dll
 C:\Users\hp\Documents\GitHub\HbMarsRover\PlanetRover\PlanetRover.Module.RoverModule\obj\Debug\PlanetRover.Module.RoverModule.pdb
+C:\Users\hp\Documents\GitHub\HbMarsRover\PlanetRover\PlanetRover.Module.RoverModule\bin\Debug\PlanetRover.Module.Common.dll
+C:\Users\hp\Documents\GitHub\HbMarsRover\PlanetRover\PlanetRover.Module.RoverModule\bin\Debug\PlanetRover.Module.PlanetModule.dll
+C:\Users\hp\Documents\GitHub\HbMarsRover\PlanetRover\PlanetRover.Module.RoverModule\bin\Debug\PlanetRover.Module.Common.pdb
+C:\Users\hp\Documents\GitHub\HbMarsRover\PlanetRover\PlanetRover.Module.RoverModule\bin\Debug\PlanetRover.Module.PlanetModule.pdb

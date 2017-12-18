@@ -39,10 +39,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domain\Direction.cs" />
+    <Compile Include="Domain\Location.cs" />
+    <Compile Include="Domain\Position.cs" />
+    <Compile Include="Domain\Tile.cs" />
+    <Compile Include="Exception\InvalidParameterException.cs" />
+    <Compile Include="Exception\ModuleLevelException.cs" />
+    <Compile Include="Exception\RequiredParameterMissingException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Domain\" />
     <Folder Include="Extension\" />
     <Folder Include="Manager\" />
   </ItemGroup>

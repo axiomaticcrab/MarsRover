@@ -44,7 +44,16 @@
     <Compile Include="Manager\RoverManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\PlanetRover.Module.Common\PlanetRover.Module.Common.csproj">
+      <Project>{A0B19982-3163-4EF3-B8A0-7D9B8FB5A133}</Project>
+      <Name>PlanetRover.Module.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PlanetRover.Module.PlanetModule\PlanetRover.Module.PlanetModule.csproj">
+      <Project>{7474F3DE-C6AB-4DDF-B093-9336A14CBA8E}</Project>
+      <Name>PlanetRover.Module.PlanetModule</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
