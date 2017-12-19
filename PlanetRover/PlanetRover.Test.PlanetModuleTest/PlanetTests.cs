@@ -13,7 +13,7 @@ namespace PlanetRover.Test.PlanetModuleTest
 
         [TestMethod]
         [ExpectedException(typeof(InvalidParameterException))]
-        public void Should_ThrowExceptionInvalidParameterException_When_WidthEqualOrLessThanZero()
+        public void Should_ThrowInvalidParameterException_When_WidthEqualOrLessThanZero()
         {
             var width = 0;
             var height = 8;
@@ -24,7 +24,7 @@ namespace PlanetRover.Test.PlanetModuleTest
 
         [TestMethod]
         [ExpectedException(typeof(RequiredParameterMissingException))]
-        public void Should_ThrowException_When_MandatoryFieldsIsMissing()
+        public void Should_ThrowRequiredParameterMissingException_When_MandatoryFieldsIsMissing()
         {
             var width = 15;
             var height = 8;

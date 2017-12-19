@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{ED4A6C3F-8F92-42C3-9115-7D1F0F8BA4F5}</ProjectGuid>
+    <ProjectGuid>{AEC45EB9-67F3-4D0E-845E-D3F65ED7DF43}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PlanetRover.Test.CommonTest</RootNamespace>
-    <AssemblyName>PlanetRover.Test.CommonTest</AssemblyName>
+    <RootNamespace>PlanetRover.Test.RoverModuleTest</RootNamespace>
+    <AssemblyName>PlanetRover.Test.RoverModuleTest</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -53,14 +53,21 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="LocationTests.cs" />
-    <Compile Include="TileTests.cs" />
+    <Compile Include="RoverTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PlanetRover.Module.Common\PlanetRover.Module.Common.csproj">
       <Project>{A0B19982-3163-4EF3-B8A0-7D9B8FB5A133}</Project>
       <Name>PlanetRover.Module.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PlanetRover.Module.PlanetModule\PlanetRover.Module.PlanetModule.csproj">
+      <Project>{7474F3DE-C6AB-4DDF-B093-9336A14CBA8E}</Project>
+      <Name>PlanetRover.Module.PlanetModule</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PlanetRover.Module.RoverModule\PlanetRover.Module.RoverModule.csproj">
+      <Project>{FAB0765B-95FD-4A17-9500-FDD70D35F8BC}</Project>
+      <Name>PlanetRover.Module.RoverModule</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

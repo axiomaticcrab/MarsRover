@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Domain\Planet.cs" />
+    <Compile Include="Exception\PlanetHasNoTileAtGivenPosition.cs" />
     <Compile Include="Manager\IPlanetManager.cs" />
     <Compile Include="Manager\PlanetManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -50,9 +51,7 @@
       <Name>PlanetRover.Module.Common</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Exception\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

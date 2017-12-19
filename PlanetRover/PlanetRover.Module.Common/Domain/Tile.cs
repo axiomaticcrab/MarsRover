@@ -6,12 +6,7 @@ namespace PlanetRover.Module.Common.Domain
     {
         public Position Position { get; protected set; }
 
-        public Tile(Position position)
-        {
-            Position = position;
-        }
-
-        public Tile(int x, int y)
+       public Tile(int x, int y)
         {
             Position = new Position(x, y);
         }

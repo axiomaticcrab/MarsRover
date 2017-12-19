@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanetRover.Test.PlanetModu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanetRover.Test.CommonTest", "PlanetRover.Test.CommonTest\PlanetRover.Test.CommonTest.csproj", "{ED4A6C3F-8F92-42C3-9115-7D1F0F8BA4F5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanetRover.Test.RoverModuleTest", "PlanetRover.Test.RoverModuleTest\PlanetRover.Test.RoverModuleTest.csproj", "{AEC45EB9-67F3-4D0E-845E-D3F65ED7DF43}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,10 @@ Global
 		{ED4A6C3F-8F92-42C3-9115-7D1F0F8BA4F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED4A6C3F-8F92-42C3-9115-7D1F0F8BA4F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED4A6C3F-8F92-42C3-9115-7D1F0F8BA4F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEC45EB9-67F3-4D0E-845E-D3F65ED7DF43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEC45EB9-67F3-4D0E-845E-D3F65ED7DF43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEC45EB9-67F3-4D0E-845E-D3F65ED7DF43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEC45EB9-67F3-4D0E-845E-D3F65ED7DF43}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -71,5 +77,6 @@ Global
 		{A0B19982-3163-4EF3-B8A0-7D9B8FB5A133} = {EE8E035F-3A88-4D23-A0E3-23BD719829FA}
 		{6DCA849B-F9DD-46A0-B916-1ADE6F264EF8} = {519CAFDB-430E-43C2-95A5-60E51C071195}
 		{ED4A6C3F-8F92-42C3-9115-7D1F0F8BA4F5} = {519CAFDB-430E-43C2-95A5-60E51C071195}
+		{AEC45EB9-67F3-4D0E-845E-D3F65ED7DF43} = {519CAFDB-430E-43C2-95A5-60E51C071195}
 	EndGlobalSection
 EndGlobal
