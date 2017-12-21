@@ -2,3 +2,6 @@ C:\Users\hp\Documents\GitHub\HbMarsRover\PlanetRover\PlanetRover.Ui.ConsoleAppli
 C:\Users\hp\Documents\GitHub\HbMarsRover\PlanetRover\PlanetRover.Ui.ConsoleApplication\bin\Debug\PlanetRover.Ui.ConsoleApplication.pdb
 C:\Users\hp\Documents\GitHub\HbMarsRover\PlanetRover\PlanetRover.Ui.ConsoleApplication\obj\Debug\PlanetRover.Ui.ConsoleApplication.exe
 C:\Users\hp\Documents\GitHub\HbMarsRover\PlanetRover\PlanetRover.Ui.ConsoleApplication\obj\Debug\PlanetRover.Ui.ConsoleApplication.pdb
+C:\Users\hp\Documents\GitHub\HbMarsRover\PlanetRover\PlanetRover.Ui.ConsoleApplication\obj\Debug\PlanetRover.Ui.ConsoleApplication.csprojResolveAssemblyReference.cache
+C:\Users\hp\Documents\GitHub\HbMarsRover\PlanetRover\PlanetRover.Ui.ConsoleApplication\bin\Debug\PlanetRover.Module.Common.dll
+C:\Users\hp\Documents\GitHub\HbMarsRover\PlanetRover\PlanetRover.Ui.ConsoleApplication\bin\Debug\PlanetRover.Module.Common.pdb

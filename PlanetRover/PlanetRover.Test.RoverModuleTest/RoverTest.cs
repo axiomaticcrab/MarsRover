@@ -1,6 +1,8 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System.Linq;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PlanetRover.Module.Common.Domain;
 using PlanetRover.Module.Common.Exception;
+using PlanetRover.Module.Common.Manager;
 using PlanetRover.Module.PlanetModule.Domain;
 using PlanetRover.Module.RoverModule.Domain;
 using PlanetRover.Module.RoverModule.Exception;
@@ -10,13 +12,20 @@ namespace PlanetRover.Test.RoverModuleTest
     [TestClass]
     public class RoverTest
     {
+        private readonly IDirectionManager directionManager;
+
+        public RoverTest()
+        {
+            directionManager = new DirectionManager();
+        }
+
         #region Feature : Land
 
         [TestMethod]
         public void Should_LandAtOriginTile_When_NoSpesificPositionGiven()
         {
             var planet = new Planet().With(10, 20, "TestPlanet");
-            var direction = Direction.North;
+            var direction = directionManager.GetDefaultDirections().First(d => d.Code == "N");
             var rover = new Rover();
 
             var roverLocation = rover.Land(planet, direction);
@@ -30,23 +39,17 @@ namespace PlanetRover.Test.RoverModuleTest
         public void Should_ThrowCannotLandToGivenTileBecauseTheTileIsNotExist_When_GivenTilePositionIsNotExist()
         {
             var planet = new Planet().With(10, 20, "TestPlanet");
-            var location = new Location().With(new Position(-5, 3), Direction.North);
+            var location = new Location().With(new Position(-5, 3), directionManager.GetDefaultDirections().First(d => d.Code == "N"));
             var rover = new Rover();
 
-            var roverLocation = rover.Land(planet, location);
-
+            rover.Land(planet, location);
         }
 
         [TestMethod]
         [ExpectedException(typeof(RequiredParameterMissingException))]
         public void Should_ThrowRequiredParameterMissingException_When_MandotaryFieldsIsMissing()
         {
-            var planet = default(Planet);
-            var direction = default(Direction);
-            var position = default(Position);
-            var rover = new Rover();
-
-            rover.Land(planet, position, direction);
+            new Rover().Land(null, null, null);
         }
 
         #endregion
@@ -58,7 +61,7 @@ namespace PlanetRover.Test.RoverModuleTest
         {
             int x = 5, y = 5;
             var planet = new Planet().With(10, 20, "TestPlanet");
-            var direction = Direction.North;
+            var direction = directionManager.GetDefaultDirections().First(d => d.Code == "N");
             var location = new Location().With(new Position(x, y), direction);
             var rover = new Rover();
             rover.Land(planet, location);
@@ -76,7 +79,7 @@ namespace PlanetRover.Test.RoverModuleTest
         {
             int x = 5, y = 5;
             var planet = new Planet().With(10, 20, "TestPlanet");
-            var direction = Direction.South;
+            var direction = directionManager.GetDefaultDirections().First(d => d.Code == "S");
             var location = new Location().With(new Position(x, y), direction);
             var rover = new Rover();
             rover.Land(planet, location);
@@ -94,7 +97,7 @@ namespace PlanetRover.Test.RoverModuleTest
         {
             int x = 5, y = 5;
             var planet = new Planet().With(10, 20, "TestPlanet");
-            var direction = Direction.East;
+            var direction = directionManager.GetDefaultDirections().First(d => d.Code == "E");
             var location = new Location().With(new Position(x, y), direction);
             var rover = new Rover();
             rover.Land(planet, location);
@@ -112,7 +115,7 @@ namespace PlanetRover.Test.RoverModuleTest
         {
             int x = 5, y = 5;
             var planet = new Planet().With(10, 20, "TestPlanet");
-            var direction = Direction.West;
+            var direction = directionManager.GetDefaultDirections().First(d => d.Code == "W");
             var location = new Location().With(new Position(x, y), direction);
             var rover = new Rover();
             rover.Land(planet, location);
@@ -126,12 +129,12 @@ namespace PlanetRover.Test.RoverModuleTest
         }
 
         [TestMethod]
-        [ExpectedException(typeof (CannotLandToGivenTileBecauseTheTileIsNotExist))]
+        [ExpectedException(typeof(CannotLandToGivenTileBecauseTheTileIsNotExist))]
         public void Should_ThrowCannotLandToGivenTileBecauseTheTileIsNotExist_When_TargetTileIsNotExist()
         {
 
             var planet = new Planet().With(10, 20, "TestPlanet");
-            var direction = Direction.West;
+            var direction = directionManager.GetDefaultDirections().First(d => d.Code == "W");
             var rover = new Rover();
             rover.Land(planet, direction);
 

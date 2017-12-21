@@ -4,6 +4,5 @@ C:\Users\hp\Documents\GitHub\HbMarsRover\PlanetRover\PlanetRover.Configuration.I
 C:\Users\hp\Documents\GitHub\HbMarsRover\PlanetRover\PlanetRover.Configuration.IoC\bin\Debug\Castle.Windsor.dll
 C:\Users\hp\Documents\GitHub\HbMarsRover\PlanetRover\PlanetRover.Configuration.IoC\bin\Debug\Castle.Core.xml
 C:\Users\hp\Documents\GitHub\HbMarsRover\PlanetRover\PlanetRover.Configuration.IoC\bin\Debug\Castle.Windsor.xml
-C:\Users\hp\Documents\GitHub\HbMarsRover\PlanetRover\PlanetRover.Configuration.IoC\obj\Debug\PlanetRover.Configuration.IoC.csprojResolveAssemblyReference.cache
 C:\Users\hp\Documents\GitHub\HbMarsRover\PlanetRover\PlanetRover.Configuration.IoC\obj\Debug\PlanetRover.Configuration.IoC.dll
 C:\Users\hp\Documents\GitHub\HbMarsRover\PlanetRover\PlanetRover.Configuration.IoC\obj\Debug\PlanetRover.Configuration.IoC.pdb

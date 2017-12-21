@@ -46,11 +46,12 @@
     <Compile Include="Exception\InvalidParameterException.cs" />
     <Compile Include="Exception\ModuleLevelException.cs" />
     <Compile Include="Exception\RequiredParameterMissingException.cs" />
+    <Compile Include="Manager\DirectionManager.cs" />
+    <Compile Include="Manager\IDirectionManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Extension\" />
-    <Folder Include="Manager\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

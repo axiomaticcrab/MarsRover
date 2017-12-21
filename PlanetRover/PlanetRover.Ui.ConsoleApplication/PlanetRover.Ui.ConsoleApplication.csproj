@@ -41,8 +41,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DirectionMapping.cs" />
+    <Compile Include="DefaultRoverInfoConverter.cs" />
+    <Compile Include="IDirectionConverter.cs" />
+    <Compile Include="IInputConverter.cs" />
+    <Compile Include="IPositionConverter.cs" />
+    <Compile Include="DefaultPositionConverter.cs" />
+    <Compile Include="IRoverInfoConverter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DefaultDirectionConverter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PlanetRover.Module.Common\PlanetRover.Module.Common.csproj">
+      <Project>{A0B19982-3163-4EF3-B8A0-7D9B8FB5A133}</Project>
+      <Name>PlanetRover.Module.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
