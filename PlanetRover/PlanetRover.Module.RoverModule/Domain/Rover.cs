@@ -1,13 +1,31 @@
 ﻿using System;
+using PlanetRover.Module.CommandModule.Domain;
+using PlanetRover.Module.CommandModule.Domain.Command.Impl;
+using PlanetRover.Module.CommandModule.Domain.CommandHandler;
+using PlanetRover.Module.CommandModule.Domain.CommandHandler.Impl;
+using PlanetRover.Module.CommandModule.Manager;
 using PlanetRover.Module.Common.Domain;
 using PlanetRover.Module.Common.Exception;
+using PlanetRover.Module.Common.Manager;
 using PlanetRover.Module.PlanetModule.Domain;
 using PlanetRover.Module.RoverModule.Exception;
 
 namespace PlanetRover.Module.RoverModule.Domain
 {
-    public class Rover
+    public class Rover : IMoveable, IRotateable, ILocationOwner
     {
+        private readonly ICommandManager commandManager;
+
+        public Rover()
+        {
+
+        }
+
+        public Rover(ICommandManager commandManager)
+        {
+            this.commandManager = commandManager;
+        }
+
         public Location Location { get; protected set; }
         public Planet Planet { get; protected set; }
 
@@ -51,5 +69,28 @@ namespace PlanetRover.Module.RoverModule.Domain
             }
             throw new CannotLandToGivenTileBecauseTheTileIsNotExist(tilePositionToMove.ToString());
         }
+
+
+        void ICommandOwner<MoveCommand, MoveCommandHandler>.Command(MoveCommand command)
+        {
+            commandManager.Handle<MoveCommand, MoveCommandHandler>(this, command);
+        }
+
+        void ICommandOwner<RotationCommand, RotationCommandHandler>.Command(RotationCommand command)
+        {
+            commandManager.Handle<RotationCommand, RotationCommandHandler>(this, command);
+        }
+
+        RotationCommandHandler ICommandOwner<RotationCommand, RotationCommandHandler>.Handler
+        {
+            get { return new RotationCommandHandler(new DirectionManager()); }
+        }
+
+        MoveCommandHandler ICommandOwner<MoveCommand, MoveCommandHandler>.Handler
+        {
+            get { return new MoveCommandHandler(); }
+        }
+
+        
     }
 }

@@ -41,21 +41,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DirectionMapping.cs" />
-    <Compile Include="DefaultRoverInfoConverter.cs" />
-    <Compile Include="IDirectionConverter.cs" />
-    <Compile Include="IInputConverter.cs" />
-    <Compile Include="IPositionConverter.cs" />
-    <Compile Include="DefaultPositionConverter.cs" />
-    <Compile Include="IRoverInfoConverter.cs" />
+    <Compile Include="InputConverters\Impl\DefaultRoverInfoConverter.cs" />
+    <Compile Include="InputConverters\IDirectionConverter.cs" />
+    <Compile Include="InputConverters\IInputConverter.cs" />
+    <Compile Include="InputConverters\IPositionConverter.cs" />
+    <Compile Include="InputConverters\Impl\DefaultPositionConverter.cs" />
+    <Compile Include="InputConverters\IRoverInfoConverter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="DefaultDirectionConverter.cs" />
+    <Compile Include="InputConverters\Impl\DefaultDirectionConverter.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\PlanetRover.Module.CommandModule\PlanetRover.Module.CommandModule.csproj">
+      <Project>{04006AF0-2662-44E2-9141-EBCFB7C0422A}</Project>
+      <Name>PlanetRover.Module.CommandModule</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PlanetRover.Module.Common\PlanetRover.Module.Common.csproj">
       <Project>{A0B19982-3163-4EF3-B8A0-7D9B8FB5A133}</Project>
       <Name>PlanetRover.Module.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PlanetRover.Module.RoverModule\PlanetRover.Module.RoverModule.csproj">
+      <Project>{FAB0765B-95FD-4A17-9500-FDD70D35F8BC}</Project>
+      <Name>PlanetRover.Module.RoverModule</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

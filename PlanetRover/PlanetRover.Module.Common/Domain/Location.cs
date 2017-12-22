@@ -2,7 +2,7 @@ using PlanetRover.Module.Common.Exception;
 
 namespace PlanetRover.Module.Common.Domain
 {
-    public class Location
+    public class Location : IPositionOwner, IDirectionOwner
     {
         public Position Position { get; protected set; }
         public Direction Direction { get; protected set; }
@@ -30,5 +30,10 @@ namespace PlanetRover.Module.Common.Domain
             if (position == null) { throw new RequiredParameterMissingException("position"); }
             Position = position;
         }
+    }
+
+    public interface ILocationOwner
+    {
+        Location Location { get; }
     }
 }

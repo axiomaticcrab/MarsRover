@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
 
-namespace PlanetRover.Ui.ConsoleApplication
+namespace PlanetRover.Ui.ConsoleApplication.InputConverters.Impl
 {
     class DefaultRoverInfoConverter : IRoverInfoConverter
     {

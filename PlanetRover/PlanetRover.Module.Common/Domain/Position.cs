@@ -38,4 +38,11 @@ namespace PlanetRover.Module.Common.Domain
             return ToString().GetHashCode();
         }
     }
+
+    public interface IPositionOwner 
+    {
+        Position Position { get; }
+
+        void SetPosition(Position position);
+    }
 }

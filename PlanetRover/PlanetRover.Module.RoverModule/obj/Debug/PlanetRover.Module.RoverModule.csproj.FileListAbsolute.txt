@@ -7,3 +7,5 @@ C:\Users\hp\Documents\GitHub\HbMarsRover\PlanetRover\PlanetRover.Module.RoverMod
 C:\Users\hp\Documents\GitHub\HbMarsRover\PlanetRover\PlanetRover.Module.RoverModule\bin\Debug\PlanetRover.Module.PlanetModule.dll
 C:\Users\hp\Documents\GitHub\HbMarsRover\PlanetRover\PlanetRover.Module.RoverModule\bin\Debug\PlanetRover.Module.Common.pdb
 C:\Users\hp\Documents\GitHub\HbMarsRover\PlanetRover\PlanetRover.Module.RoverModule\bin\Debug\PlanetRover.Module.PlanetModule.pdb
+C:\Users\hp\Documents\GitHub\HbMarsRover\PlanetRover\PlanetRover.Module.RoverModule\bin\Debug\PlanetRover.Module.CommandModule.dll
+C:\Users\hp\Documents\GitHub\HbMarsRover\PlanetRover\PlanetRover.Module.RoverModule\bin\Debug\PlanetRover.Module.CommandModule.pdb

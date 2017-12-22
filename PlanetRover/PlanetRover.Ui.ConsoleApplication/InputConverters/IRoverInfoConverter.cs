@@ -1,4 +1,4 @@
-namespace PlanetRover.Ui.ConsoleApplication
+namespace PlanetRover.Ui.ConsoleApplication.InputConverters
 {
     interface IRoverInfoConverter : IInputConverter
     {

@@ -27,4 +27,11 @@ namespace PlanetRover.Module.Common.Domain
             DegreeInRadian = degreeInRadianInRadian;
         }
     }
+
+    public interface IDirectionOwner
+    {
+        Direction Direction { get; }
+
+        void SetDirection(Direction direction);
+    }
 }

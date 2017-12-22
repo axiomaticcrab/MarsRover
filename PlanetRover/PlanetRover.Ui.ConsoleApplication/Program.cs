@@ -1,6 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using PlanetRover.Module.CommandModule.Domain;
+using PlanetRover.Module.CommandModule.Domain.Command.Impl;
+using PlanetRover.Module.CommandModule.Manager;
+using PlanetRover.Module.RoverModule.Domain;
+using PlanetRover.Ui.ConsoleApplication.InputConverters;
+using PlanetRover.Ui.ConsoleApplication.InputConverters.Impl;
 
 namespace PlanetRover.Ui.ConsoleApplication
 {
