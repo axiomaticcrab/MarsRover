@@ -26,6 +26,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanetRover.Module.CommandM
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanetRover.Configuration.Context", "PlanetRover.Configuration.Context\PlanetRover.Configuration.Context.csproj", "{19F7AD0A-CFB5-4B3C-BF9C-EBCCBAAD2DFE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{69F76782-CBA7-4A84-8B44-F0CF00F26762}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanetRover.Test.CommonTest", "PlanetRover.Test.CommonTest\PlanetRover.Test.CommonTest.csproj", "{ED4A6C3F-8F92-42C3-9115-7D1F0F8BA4F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanetRover.Test.PlanetModuleTest", "PlanetRover.Test.PlanetModuleTest\PlanetRover.Test.PlanetModuleTest.csproj", "{6DCA849B-F9DD-46A0-B916-1ADE6F264EF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanetRover.Test.RoverModuleTest", "PlanetRover.Test.RoverModuleTest\PlanetRover.Test.RoverModuleTest.csproj", "{AEC45EB9-67F3-4D0E-845E-D3F65ED7DF43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanetRover.Test.CommandModuleTest", "PlanetRover.Test.CommandModuleTest\PlanetRover.Test.CommandModuleTest.csproj", "{C6590C04-AA14-445A-B266-F932FE229DAC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -60,6 +70,22 @@ Global
 		{19F7AD0A-CFB5-4B3C-BF9C-EBCCBAAD2DFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19F7AD0A-CFB5-4B3C-BF9C-EBCCBAAD2DFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19F7AD0A-CFB5-4B3C-BF9C-EBCCBAAD2DFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED4A6C3F-8F92-42C3-9115-7D1F0F8BA4F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED4A6C3F-8F92-42C3-9115-7D1F0F8BA4F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED4A6C3F-8F92-42C3-9115-7D1F0F8BA4F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED4A6C3F-8F92-42C3-9115-7D1F0F8BA4F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DCA849B-F9DD-46A0-B916-1ADE6F264EF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DCA849B-F9DD-46A0-B916-1ADE6F264EF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DCA849B-F9DD-46A0-B916-1ADE6F264EF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DCA849B-F9DD-46A0-B916-1ADE6F264EF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEC45EB9-67F3-4D0E-845E-D3F65ED7DF43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEC45EB9-67F3-4D0E-845E-D3F65ED7DF43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEC45EB9-67F3-4D0E-845E-D3F65ED7DF43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEC45EB9-67F3-4D0E-845E-D3F65ED7DF43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6590C04-AA14-445A-B266-F932FE229DAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6590C04-AA14-445A-B266-F932FE229DAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6590C04-AA14-445A-B266-F932FE229DAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6590C04-AA14-445A-B266-F932FE229DAC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -72,5 +98,9 @@ Global
 		{A0B19982-3163-4EF3-B8A0-7D9B8FB5A133} = {EE8E035F-3A88-4D23-A0E3-23BD719829FA}
 		{04006AF0-2662-44E2-9141-EBCFB7C0422A} = {EE8E035F-3A88-4D23-A0E3-23BD719829FA}
 		{19F7AD0A-CFB5-4B3C-BF9C-EBCCBAAD2DFE} = {1E562BD8-E5A5-4301-B5A2-CE06D9054EED}
+		{ED4A6C3F-8F92-42C3-9115-7D1F0F8BA4F5} = {69F76782-CBA7-4A84-8B44-F0CF00F26762}
+		{6DCA849B-F9DD-46A0-B916-1ADE6F264EF8} = {69F76782-CBA7-4A84-8B44-F0CF00F26762}
+		{AEC45EB9-67F3-4D0E-845E-D3F65ED7DF43} = {69F76782-CBA7-4A84-8B44-F0CF00F26762}
+		{C6590C04-AA14-445A-B266-F932FE229DAC} = {69F76782-CBA7-4A84-8B44-F0CF00F26762}
 	EndGlobalSection
 EndGlobal

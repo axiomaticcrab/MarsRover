@@ -34,6 +34,12 @@ namespace PlanetRover.Module.RoverModule.Domain
         public Location Location { get; protected set; }
         public Planet Planet { get; protected set; }
 
+        public Location Land(Planet planet, Direction direction)
+        {
+            return Land(planet, planet.GetOriginTile().Position, direction);
+        }
+
+
         public Location Land(Planet planet, Position position, Direction direction)
         {
             return Land(planet, new Location().With(position, direction));

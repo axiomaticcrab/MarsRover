@@ -41,6 +41,11 @@ namespace PlanetRover.Module.PlanetModule.Domain
             throw new PlanetHasNoTileAtGivenPosition(position.ToString());
         }
 
+        public Tile GetOriginTile()
+        {
+            return GetTileAt(new Position(0, 0));
+        }
+
         protected void GenerateTiles()
         {
             Tiles = new List<Tile>();
