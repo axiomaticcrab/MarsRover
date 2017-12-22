@@ -2,9 +2,9 @@
 {
     public class MoveCommand : Command
     {
-        public float Degree { get; set; }
+        public int Degree { get; set; }
 
-        public MoveCommand(string code, float degree) : base(code)
+        public MoveCommand(string code, int degree) : base(code)
         {
             Degree = degree;
         }

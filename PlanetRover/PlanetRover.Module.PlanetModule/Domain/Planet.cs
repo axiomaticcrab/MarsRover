@@ -8,19 +8,11 @@ namespace PlanetRover.Module.PlanetModule.Domain
 {
     public class Planet
     {
-        #region IoC
-
         public int Width { get; protected set; }
         public int Height { get; protected set; }
         public string Name { get; protected set; }
         public List<Tile> Tiles { get; set; }
 
-        public Planet()
-        {
-
-        }
-
-        #endregion
 
         public Planet With(int width, int height, string name)
         {
@@ -47,11 +39,6 @@ namespace PlanetRover.Module.PlanetModule.Domain
                 return Tiles.First(x => x.Position.Equals(position));
             }
             throw new PlanetHasNoTileAtGivenPosition(position.ToString());
-        }
-
-        public Tile GetOriginTile()
-        {
-            return GetTileAt(new Position(0, 0));
         }
 
         protected void GenerateTiles()

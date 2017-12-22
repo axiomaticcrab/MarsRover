@@ -2,4 +2,3 @@ C:\Users\hp\Documents\GitHub\HbMarsRover\PlanetRover\PlanetRover.Module.Common\b
 C:\Users\hp\Documents\GitHub\HbMarsRover\PlanetRover\PlanetRover.Module.Common\bin\Debug\PlanetRover.Module.Common.pdb
 C:\Users\hp\Documents\GitHub\HbMarsRover\PlanetRover\PlanetRover.Module.Common\obj\Debug\PlanetRover.Module.Common.dll
 C:\Users\hp\Documents\GitHub\HbMarsRover\PlanetRover\PlanetRover.Module.Common\obj\Debug\PlanetRover.Module.Common.pdb
-C:\Users\hp\Documents\GitHub\HbMarsRover\PlanetRover\PlanetRover.Module.Common\obj\Debug\PlanetRover.Module.Common.csprojResolveAssemblyReference.cache

@@ -6,7 +6,7 @@ namespace PlanetRover.Module.Common.Manager
 {
     public class DirectionManager : IDirectionManager
     {
-        static readonly List<KeyValuePair<int, string>> DefaultDirectionsHolder = new List<KeyValuePair<int, string>>
+        static readonly List<KeyValuePair<int, string>> DirectionsHolder = new List<KeyValuePair<int, string>>
         {
             new KeyValuePair<int, string>(0,"East"),
             new KeyValuePair<int, string>(90,"North"),
@@ -14,10 +14,10 @@ namespace PlanetRover.Module.Common.Manager
             new KeyValuePair<int, string>(270,"South"),
         };
 
-        public List<Direction> GetDefaultDirections()
+        public List<Direction> GetDirections()
         {
             var result = new List<Direction>();
-            DefaultDirectionsHolder.ForEach(x =>
+            DirectionsHolder.ForEach(x =>
             {
                 result.Add(new Direction(x.Value, x.Value.ToUpperInvariant().First().ToString(), x.Key));
             });

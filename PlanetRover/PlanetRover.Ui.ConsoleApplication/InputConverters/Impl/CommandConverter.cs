@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace PlanetRover.Ui.ConsoleApplication.InputConverters.Impl
 {
-    class DefaultCommandConverter : ICommandConverter
+    class CommandConverter : ICommandConverter
     {
         public bool IsValid { get { return (Commands != null) ? Commands.Any() : false; } }
         public IInputConverter Convert(string input)

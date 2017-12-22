@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace PlanetRover.Ui.ConsoleApplication.InputConverters.Impl
 {
-    class DefaultPositionConverter : IPositionConverter
+    class PositionConverter : IPositionConverter
     {
         public int X { get; private set; }
         public int Y { get; private set; }

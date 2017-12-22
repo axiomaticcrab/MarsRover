@@ -49,16 +49,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="InputConverters\ICommandConverter.cs" />
-    <Compile Include="InputConverters\Impl\DefaultCommandConverter.cs" />
+    <Compile Include="InputConverters\Impl\CommandConverter.cs" />
     <Compile Include="InputConverters\Impl\DefaultRoverInfoConverter.cs" />
     <Compile Include="InputConverters\IDirectionConverter.cs" />
     <Compile Include="InputConverters\IInputConverter.cs" />
     <Compile Include="InputConverters\IPositionConverter.cs" />
-    <Compile Include="InputConverters\Impl\DefaultPositionConverter.cs" />
+    <Compile Include="InputConverters\Impl\PositionConverter.cs" />
     <Compile Include="InputConverters\IRoverInfoConverter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="InputConverters\Impl\DefaultDirectionConverter.cs" />
+    <Compile Include="InputConverters\Impl\DirectionConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PlanetRover.Configuration.IoC\PlanetRover.Configuration.IoC.csproj">

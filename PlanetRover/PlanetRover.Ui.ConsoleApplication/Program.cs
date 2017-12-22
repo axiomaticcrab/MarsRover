@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using Castle.Windsor;
 using PlanetRover.Configuration.IoC.Factory;
 using PlanetRover.Module.CommandModule.Manager;
 using PlanetRover.Module.Common.Domain;
@@ -16,8 +15,6 @@ namespace PlanetRover.Ui.ConsoleApplication
 {
     static class Program
     {
-        private static readonly ContainerFactory ContainerFactory;
-        private static readonly IWindsorContainer Container;
         private static readonly IPlanetManager PlanetManager;
         private static readonly IRoverManager RoverManager;
         private static readonly IDirectionManager DirectionManager;
@@ -25,36 +22,35 @@ namespace PlanetRover.Ui.ConsoleApplication
 
         static Program()
         {
-            ContainerFactory = new ContainerFactory();
-            Container = ContainerFactory.Get();
-            PlanetManager = Container.Resolve<IPlanetManager>();
-            RoverManager = Container.Resolve<IRoverManager>();
-            DirectionManager = ContainerFactory.Resolve<IDirectionManager>();
-            CommandManager = ContainerFactory.Resolve<ICommandManager>();
+            var containerFactory = new ContainerFactory();
+            var container = containerFactory.Get();
+
+            PlanetManager = container.Resolve<IPlanetManager>();
+            RoverManager = container.Resolve<IRoverManager>();
+            DirectionManager = containerFactory.Resolve<IDirectionManager>();
+            CommandManager = containerFactory.Resolve<ICommandManager>();
         }
 
         static void Main()
         {
-
-
-            var planetSizeConverter = RequestData<DefaultPositionConverter>("Provide planet's top left corner position with whitespaces.");
+            var planetSizeConverter = RequestInput<PositionConverter>("Provide planet's top left corner position with whitespaces.");
             var planet = PlanetManager.CreatePlanet(planetSizeConverter.X, planetSizeConverter.Y, "Mars");
 
-            var firstRoverInfo = RequestData<DefaultRoverInfoConverter>("Provide first rover's information");
+            var firstRoverInfo = RequestInput<RoverInfoConverter>("Provide first rover's information");
             var firstRover = CreateRover(firstRoverInfo, planet);
-            var firstRoverCommands = RequestData<DefaultCommandConverter>("Provide commands for first rover");
+            var firstRoverCommands = RequestInput<CommandConverter>("Provide commands for first rover");
 
-            var secondRoverInfo = RequestData<DefaultRoverInfoConverter>("Provide second rover's information");
+            var secondRoverInfo = RequestInput<RoverInfoConverter>("Provide second rover's information");
             var secondRover = CreateRover(secondRoverInfo, planet);
-            var secondRoverCommands = RequestData<DefaultCommandConverter>("Provide commands for second rover");
+            var secondRoverCommands = RequestInput<CommandConverter>("Provide commands for second rover");
 
             CommandRover(firstRover, firstRoverCommands);
             Console.WriteLine(firstRover.ToString());
 
-            //CommandRover(secondRover, secondRoverCommands);
-            //Console.WriteLine(secondRover.ToString());
+            CommandRover(secondRover, secondRoverCommands);
+            Console.WriteLine(secondRover.ToString());
 
-            Console.WriteLine("Done !");
+            Console.WriteLine("Done ! Press any key to exit.");
             Console.ReadLine();
         }
 
@@ -63,7 +59,7 @@ namespace PlanetRover.Ui.ConsoleApplication
             commandConverter.Commands.ForEach(cc =>
             {
                 var command = CommandManager.GetCommands().First(c => c.Code == cc);
-                CommandManager.Handle(rover, command);
+                CommandManager.Apply(rover, command);
             });
         }
 
@@ -71,13 +67,13 @@ namespace PlanetRover.Ui.ConsoleApplication
         {
             var position = new Position(roverInfoConverter.PositionConverter.X, roverInfoConverter.PositionConverter.Y);
             var direction =
-                DirectionManager.GetDefaultDirections()
+                DirectionManager.GetDirections()
                     .First(x => x.Degree == roverInfoConverter.DirectionConverter.Degree);
             var location = new Location().With(position, direction);
             return RoverManager.CreateRoverAndLand(planet, location);
         }
 
-        static T RequestData<T>(string requestMessage) where T : IInputConverter, new()
+        static T RequestInput<T>(string requestMessage) where T : IInputConverter, new()
         {
             var converter = new T();
 

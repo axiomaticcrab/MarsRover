@@ -13,7 +13,7 @@ namespace PlanetRover.Module.CommandModule.Manager
 
         List<Command> GetCommands();
 
-        void Handle(ICommandOwner owner, ICommand command);
+        void Apply(ICommandOwner owner, ICommand command);
     }
 
     public class CommandManager : ICommandManager
@@ -33,7 +33,7 @@ namespace PlanetRover.Module.CommandModule.Manager
                 };
         }
 
-        public void Handle(ICommandOwner owner, ICommand command)
+        public void Apply(ICommandOwner owner, ICommand command)
         {
             owner.Command(command);
         }

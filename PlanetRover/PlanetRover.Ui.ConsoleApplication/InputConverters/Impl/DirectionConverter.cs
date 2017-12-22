@@ -4,20 +4,20 @@ using System.Linq;
 
 namespace PlanetRover.Ui.ConsoleApplication.InputConverters.Impl
 {
-    class DefaultDirectionConverter : IDirectionConverter
+    class DirectionConverter : IDirectionConverter
     {
-        private readonly Dictionary<Func<string, bool>, Func<float>> directions = new Dictionary<Func<string, bool>, Func<float>>
+        private readonly Dictionary<Func<string, bool>, Func<int>> directions = new Dictionary<Func<string, bool>, Func<int>>
         {
-            {x => x == "E", () => { return 0; } },
-            {x => x == "N", () => { return 90; }},
-            {x => x == "W", () => { return 180; }},
-            {x => x == "S", () => { return 270; }}
+            {x => x == "E", () => 0},
+            {x => x == "N", () => 90},
+            {x => x == "W", () => 180},
+            {x => x == "S", () => 270}
         };
 
         private bool isValid;
         public bool IsValid { get { return isValid; } }
 
-        public float Degree { get; private set; }
+        public int Degree { get; private set; }
 
         public IInputConverter Convert(string input)
         {

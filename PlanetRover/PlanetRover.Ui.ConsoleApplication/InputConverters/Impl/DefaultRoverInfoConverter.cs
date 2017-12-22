@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace PlanetRover.Ui.ConsoleApplication.InputConverters.Impl
 {
-    class DefaultRoverInfoConverter : IRoverInfoConverter
+    class RoverInfoConverter : IRoverInfoConverter
     {
         public bool IsValid { get { return PositionConverter.IsValid && DirectionConverter.IsValid; } }
 
@@ -24,10 +24,10 @@ namespace PlanetRover.Ui.ConsoleApplication.InputConverters.Impl
         public IPositionConverter PositionConverter { get; }
         public IDirectionConverter DirectionConverter { get; }
 
-        public DefaultRoverInfoConverter()
+        public RoverInfoConverter()
         {
-            PositionConverter = new DefaultPositionConverter();
-            DirectionConverter = new DefaultDirectionConverter();
+            PositionConverter = new PositionConverter();
+            DirectionConverter = new DirectionConverter();
         }
     }
 }

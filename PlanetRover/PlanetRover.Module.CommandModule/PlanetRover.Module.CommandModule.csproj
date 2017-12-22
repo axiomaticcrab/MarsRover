@@ -39,7 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Domain\Command\Command.cs" />
+    <Compile Include="Domain\CommandHandler\Impl\RotationCommandHandler.cs" />
     <Compile Include="Domain\Command\ICommand.cs" />
     <Compile Include="Domain\CommandHandler\ICommandHandler.cs" />
     <Compile Include="Domain\ICommandOwner.cs" />

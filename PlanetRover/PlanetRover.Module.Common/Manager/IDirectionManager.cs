@@ -5,6 +5,6 @@ namespace PlanetRover.Module.Common.Manager
 {
     public interface IDirectionManager
     {
-        List<Direction> GetDefaultDirections();
+        List<Direction> GetDirections();
     }
 }

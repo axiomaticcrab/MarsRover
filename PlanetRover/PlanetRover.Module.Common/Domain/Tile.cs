@@ -40,6 +40,6 @@ namespace PlanetRover.Module.Common.Domain
     {
         Tile CurrentTile { get; }
 
-     void Move(Position position);
+        void Move(Position position);
     }
 }
