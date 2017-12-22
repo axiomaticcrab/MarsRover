@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using PlanetRover.Module.Common.Exception;
+﻿using PlanetRover.Module.Common.Exception;
 
 namespace PlanetRover.Module.Common.Domain
 {
@@ -8,9 +6,9 @@ namespace PlanetRover.Module.Common.Domain
     {
         public string Name { get; set; }
         public string Code { get; set; }
-        public int DegreeInRadian { get; set; }
+        public int Degree { get; set; }
 
-        public Direction(string name, string code, int degreeInRadianInRadian)
+        public Direction(string name, string code, int degree)
         {
             if (string.IsNullOrEmpty(name))
             {
@@ -24,7 +22,7 @@ namespace PlanetRover.Module.Common.Domain
 
             Name = name;
             Code = code;
-            DegreeInRadian = degreeInRadianInRadian;
+            Degree = degree;
         }
     }
 

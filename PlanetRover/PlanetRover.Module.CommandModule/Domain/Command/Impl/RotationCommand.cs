@@ -2,9 +2,9 @@ namespace PlanetRover.Module.CommandModule.Domain.Command.Impl
 {
     public class RotationCommand : Command
     {
-        public float Degree { get; protected set; }
+        public int Degree { get; protected set; }
 
-        public RotationCommand(string code, float degree) : base(code)
+        public RotationCommand(string code, int degree) : base(code)
         {
             Degree = degree;
         }

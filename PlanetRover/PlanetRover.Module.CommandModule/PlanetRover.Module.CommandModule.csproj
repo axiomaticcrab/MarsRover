@@ -47,7 +47,6 @@
     <Compile Include="Domain\CommandHandler\Impl\MoveCommandHandler.cs" />
     <Compile Include="Domain\Command\Impl\RotationCommand.cs" />
     <Compile Include="Manager\ICommandManager.cs" />
-    <Compile Include="Manager\CommandManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

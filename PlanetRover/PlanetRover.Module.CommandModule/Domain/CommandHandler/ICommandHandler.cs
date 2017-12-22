@@ -1,5 +1,4 @@
 ﻿using PlanetRover.Module.CommandModule.Domain.Command;
-using PlanetRover.Module.Common.Domain;
 
 namespace PlanetRover.Module.CommandModule.Domain.CommandHandler
 {

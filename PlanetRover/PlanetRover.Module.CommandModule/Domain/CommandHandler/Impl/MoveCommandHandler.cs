@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.InteropServices;
-using System.Security.Cryptography;
-using PlanetRover.Module.CommandModule.Domain.Command;
 using PlanetRover.Module.CommandModule.Domain.Command.Impl;
 using PlanetRover.Module.Common.Domain;
 using PlanetRover.Module.Common.Manager;
@@ -12,17 +8,28 @@ namespace PlanetRover.Module.CommandModule.Domain.CommandHandler.Impl
 {
     public class MoveCommandHandler : ICommandHandler<MoveCommand>
     {
+        private readonly IDirectionManager directionManager;
+
+        public MoveCommandHandler(IDirectionManager directionManager)
+        {
+            this.directionManager = directionManager;
+        }
+
         public void Handle(MoveCommand command, ICommandOwner owner)
         {
-            if (owner is IPositionOwner)
+            if (owner is IMoveable)
             {
                 if (command.Degree != 0)
                 {
                     throw new NotImplementedException();
                 }
 
-                var positionOwner = ((IPositionOwner)owner);
-                positionOwner.SetPosition(new Position(positionOwner.Position.X, positionOwner.Position.Y + 1));
+                var tileOwner = ((ITileOwner)owner);
+                var directionOwner = ((IDirectionOwner)owner);
+
+                var targetPosition = tileOwner.CurrentTile.FindNeighbourTilePosition(directionOwner.Direction);
+
+                tileOwner.Move(targetPosition);
             }
         }
     }
@@ -38,14 +45,13 @@ namespace PlanetRover.Module.CommandModule.Domain.CommandHandler.Impl
 
         public void Handle(RotationCommand command, ICommandOwner commandOwner)
         {
-            if (commandOwner is IDirectionOwner)
+            if (commandOwner is IRotateable)
             {
                 var directionOwner = ((IDirectionOwner)commandOwner);
 
-                var newDegree = directionOwner.Direction.DegreeInRadian + (command.Degree);
+                var newDegree = directionOwner.Direction.Degree.Add(command.Degree);
 
-                var newDirection =
-                directionManager.GetDefaultDirections().First(x => x.DegreeInRadian == newDegree);
+                var newDirection = directionManager.GetDefaultDirections().First(x => x.Degree == newDegree);
 
                 directionOwner.SetDirection(newDirection);
             }

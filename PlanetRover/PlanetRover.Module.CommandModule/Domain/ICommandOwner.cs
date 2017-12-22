@@ -2,6 +2,7 @@ using PlanetRover.Module.CommandModule.Domain.Command;
 using PlanetRover.Module.CommandModule.Domain.Command.Impl;
 using PlanetRover.Module.CommandModule.Domain.CommandHandler;
 using PlanetRover.Module.CommandModule.Domain.CommandHandler.Impl;
+using PlanetRover.Module.Common.Domain;
 
 namespace PlanetRover.Module.CommandModule.Domain
 {
@@ -14,14 +15,15 @@ namespace PlanetRover.Module.CommandModule.Domain
 
     public interface ICommandOwner
     {
+        void Command(ICommand command);
     }
 
-    public interface IMoveable : ICommandOwner<MoveCommand, MoveCommandHandler>
+    public interface IMoveable : ICommandOwner<MoveCommand, MoveCommandHandler> , ITileOwner , IDirectionOwner
     {
         
     }
 
-    public interface IRotateable : ICommandOwner<RotationCommand, RotationCommandHandler>
+    public interface IRotateable : ICommandOwner<RotationCommand, RotationCommandHandler> , IDirectionOwner
     {
         
     }

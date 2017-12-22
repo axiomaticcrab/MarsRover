@@ -3,9 +3,14 @@ using PlanetRover.Module.Common.Exception;
 
 namespace PlanetRover.Module.Common.Domain
 {
-    public class Tile
+    public class Tile : IPositionOwner
     {
         public Position Position { get; protected set; }
+
+        public void SetPosition(Position position)
+        {
+            Position = position;
+        }
 
         public Tile(int x, int y)
         {
@@ -15,7 +20,7 @@ namespace PlanetRover.Module.Common.Domain
         public Position FindNeighbourTilePosition(Direction direction)
         {
             if (direction == null) { throw new InvalidParameterException("direction"); }
-            switch (direction.DegreeInRadian)
+            switch (direction.Degree)
             {
                 case 0:
                     return new Position(Position.X + 1, Position.Y);
@@ -29,5 +34,12 @@ namespace PlanetRover.Module.Common.Domain
                     throw new NotImplementedException();
             }
         }
+    }
+
+    public interface ITileOwner
+    {
+        Tile CurrentTile { get; }
+
+     void Move(Position position);
     }
 }

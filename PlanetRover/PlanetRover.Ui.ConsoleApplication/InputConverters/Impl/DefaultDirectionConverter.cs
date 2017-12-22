@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using PlanetRover.Module.Common.Domain;
 
 namespace PlanetRover.Ui.ConsoleApplication.InputConverters.Impl
 {

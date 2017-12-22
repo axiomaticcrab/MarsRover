@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Linq;
+using PlanetRover.Configuration.Context;
 using PlanetRover.Module.CommandModule.Domain;
+using PlanetRover.Module.CommandModule.Domain.Command;
 using PlanetRover.Module.CommandModule.Domain.Command.Impl;
 using PlanetRover.Module.CommandModule.Domain.CommandHandler;
 using PlanetRover.Module.CommandModule.Domain.CommandHandler.Impl;
@@ -15,15 +18,12 @@ namespace PlanetRover.Module.RoverModule.Domain
     public class Rover : IMoveable, IRotateable, ILocationOwner
     {
         private readonly ICommandManager commandManager;
+        private readonly IModuleContext context;
 
-        public Rover()
-        {
-
-        }
-
-        public Rover(ICommandManager commandManager)
+        public Rover(ICommandManager commandManager,IModuleContext context)
         {
             this.commandManager = commandManager;
+            this.context = context;
         }
 
         public Location Location { get; protected set; }
@@ -83,14 +83,61 @@ namespace PlanetRover.Module.RoverModule.Domain
 
         RotationCommandHandler ICommandOwner<RotationCommand, RotationCommandHandler>.Handler
         {
-            get { return new RotationCommandHandler(new DirectionManager()); }
+            get { return context.Resolve<ICommandHandler<RotationCommand>>() as RotationCommandHandler; }
         }
 
         MoveCommandHandler ICommandOwner<MoveCommand, MoveCommandHandler>.Handler
         {
-            get { return new MoveCommandHandler(); }
+            get { return context.Resolve<ICommandHandler<MoveCommand>>() as MoveCommandHandler; }
         }
 
-        
+        void ICommandOwner.Command(ICommand command)
+        {
+            if (command is MoveCommand)
+            {
+                ((IMoveable)this).Command((MoveCommand)command);
+            }
+            else if (command is RotationCommand)
+            {
+                ((IRotateable)this).Command((RotationCommand)command);
+            }
+        }
+
+        public override string ToString()
+        {
+            return String.Format("{0} {1} {2}", Location.Position.X, Location.Position.Y, Location.Direction.Code);
+        }
+
+        Direction IDirectionOwner.Direction
+        {
+            get { return Location.Direction; }
+        }
+
+        void IDirectionOwner.SetDirection(Direction direction)
+        {
+            Location.SetDirection(direction);
+        }
+
+        //Position IPositionOwner.Position
+        //{
+        //    get { return Location.Position; }
+        //}
+
+        //void IPositionOwner.SetPosition(Position position)
+        //{
+        //    Location.SetPosition(position);
+        //}
+
+        Tile ITileOwner.CurrentTile
+        {
+            get { return Planet.GetTileAt(Location.Position); }
+        }
+
+       
+        void ITileOwner.Move(Position position)
+        {
+            var tile = Planet.GetTileAt(position);
+            Location.SetPosition(tile.Position);
+        }
     }
 }

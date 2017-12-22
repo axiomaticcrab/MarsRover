@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Factory\ContainerFactory.cs" />
+    <Compile Include="Installer\ModuleContextInstaller.cs" />
     <Compile Include="Installer\ModuleInstaller.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -55,6 +56,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\PlanetRover.Configuration.Context\PlanetRover.Configuration.Context.csproj">
+      <Project>{19F7AD0A-CFB5-4B3C-BF9C-EBCCBAAD2DFE}</Project>
+      <Name>PlanetRover.Configuration.Context</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PlanetRover.Module.CommandModule\PlanetRover.Module.CommandModule.csproj">
       <Project>{04006AF0-2662-44E2-9141-EBCFB7C0422A}</Project>
       <Name>PlanetRover.Module.CommandModule</Name>

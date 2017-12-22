@@ -5,20 +5,20 @@ namespace PlanetRover.Ui.ConsoleApplication.InputConverters.Impl
 {
     class DefaultCommandConverter : ICommandConverter
     {
-        public bool IsValid { get { return (CommandCodes != null) ? CommandCodes.Any() : false; } }
+        public bool IsValid { get { return (Commands != null) ? Commands.Any() : false; } }
         public IInputConverter Convert(string input)
         {
             if (!string.IsNullOrEmpty(input))
             {
-                CommandCodes = new List<string>();
+                Commands = new List<string>();
                 foreach (var commandCode in input)
                 {
-                    CommandCodes.Add(commandCode.ToString());
+                    Commands.Add(commandCode.ToString());
                 }
             }
             return this;
         }
 
-        public List<string> CommandCodes { get; private set; }
+        public List<string> Commands { get; private set; }
     }
 }

@@ -49,7 +49,13 @@ namespace PlanetRover.Configuration.IoC.Factory
             container = new WindsorContainer();
             container.Register(Component.For<IWindsorContainer>().Instance(container));
             
+            RegisterModuleContext(container);
             RegisterModules(container);
+        }
+
+        private void RegisterModuleContext(IWindsorContainer container)
+        {
+            container.Install(new ModuleContextInstaller());
         }
 
         private void RegisterModules(IWindsorContainer container)

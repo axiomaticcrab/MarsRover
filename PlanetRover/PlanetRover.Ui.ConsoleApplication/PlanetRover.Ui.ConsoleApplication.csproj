@@ -73,6 +73,10 @@
       <Project>{A0B19982-3163-4EF3-B8A0-7D9B8FB5A133}</Project>
       <Name>PlanetRover.Module.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PlanetRover.Module.PlanetModule\PlanetRover.Module.PlanetModule.csproj">
+      <Project>{7474F3DE-C6AB-4DDF-B093-9336A14CBA8E}</Project>
+      <Name>PlanetRover.Module.PlanetModule</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PlanetRover.Module.RoverModule\PlanetRover.Module.RoverModule.csproj">
       <Project>{FAB0765B-95FD-4A17-9500-FDD70D35F8BC}</Project>
       <Name>PlanetRover.Module.RoverModule</Name>

@@ -4,7 +4,7 @@ namespace PlanetRover.Ui.ConsoleApplication.InputConverters
 {
     interface ICommandConverter : IInputConverter
     {
-        List<string> CommandCodes { get; }
+        List<string> Commands { get; }
 
     }
 }

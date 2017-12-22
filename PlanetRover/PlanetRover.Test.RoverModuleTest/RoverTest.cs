@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using PlanetRover.Configuration.Context;
 using PlanetRover.Module.Common.Domain;
 using PlanetRover.Module.Common.Exception;
 using PlanetRover.Module.Common.Manager;
@@ -12,11 +13,13 @@ namespace PlanetRover.Test.RoverModuleTest
     [TestClass]
     public class RoverTest
     {
+        private readonly IModuleContext context;
         private readonly IDirectionManager directionManager;
 
-        public RoverTest()
+        public RoverTest(IModuleContext context)
         {
-            directionManager = new DirectionManager();
+            this.context = context;
+            directionManager = context.Resolve<IDirectionManager>();
         }
 
         #region Feature : Land
@@ -26,7 +29,7 @@ namespace PlanetRover.Test.RoverModuleTest
         {
             var planet = new Planet().With(10, 20, "TestPlanet");
             var direction = directionManager.GetDefaultDirections().First(d => d.Code == "N");
-            var rover = new Rover();
+            var rover = context.Resolve<Rover>();
 
             var roverLocation = rover.Land(planet, direction);
 
@@ -40,7 +43,7 @@ namespace PlanetRover.Test.RoverModuleTest
         {
             var planet = new Planet().With(10, 20, "TestPlanet");
             var location = new Location().With(new Position(-5, 3), directionManager.GetDefaultDirections().First(d => d.Code == "N"));
-            var rover = new Rover();
+            var rover = context.Resolve<Rover>();
 
             rover.Land(planet, location);
         }
@@ -49,7 +52,7 @@ namespace PlanetRover.Test.RoverModuleTest
         [ExpectedException(typeof(RequiredParameterMissingException))]
         public void Should_ThrowRequiredParameterMissingException_When_MandotaryFieldsIsMissing()
         {
-            new Rover().Land(null, null, null);
+            context.Resolve<Rover>().Land(null, null, null);
         }
 
         #endregion
@@ -63,7 +66,7 @@ namespace PlanetRover.Test.RoverModuleTest
             var planet = new Planet().With(10, 20, "TestPlanet");
             var direction = directionManager.GetDefaultDirections().First(d => d.Code == "N");
             var location = new Location().With(new Position(x, y), direction);
-            var rover = new Rover();
+            var rover = context.Resolve<Rover>();
             rover.Land(planet, location);
 
             var newLocationAfterMove = new Location().With(new Position(x, y + 1), direction);
@@ -81,7 +84,7 @@ namespace PlanetRover.Test.RoverModuleTest
             var planet = new Planet().With(10, 20, "TestPlanet");
             var direction = directionManager.GetDefaultDirections().First(d => d.Code == "S");
             var location = new Location().With(new Position(x, y), direction);
-            var rover = new Rover();
+            var rover = context.Resolve<Rover>();
             rover.Land(planet, location);
 
             var newLocationAfterMove = new Location().With(new Position(x, y - 1), direction);
@@ -99,7 +102,7 @@ namespace PlanetRover.Test.RoverModuleTest
             var planet = new Planet().With(10, 20, "TestPlanet");
             var direction = directionManager.GetDefaultDirections().First(d => d.Code == "E");
             var location = new Location().With(new Position(x, y), direction);
-            var rover = new Rover();
+            var rover = context.Resolve<Rover>();
             rover.Land(planet, location);
 
             var newLocationAfterMove = new Location().With(new Position(x + 1, y), direction);
@@ -117,7 +120,7 @@ namespace PlanetRover.Test.RoverModuleTest
             var planet = new Planet().With(10, 20, "TestPlanet");
             var direction = directionManager.GetDefaultDirections().First(d => d.Code == "W");
             var location = new Location().With(new Position(x, y), direction);
-            var rover = new Rover();
+            var rover = context.Resolve<Rover>();
             rover.Land(planet, location);
 
             var newLocationAfterMove = new Location().With(new Position(x - 1, y), direction);
@@ -135,7 +138,7 @@ namespace PlanetRover.Test.RoverModuleTest
 
             var planet = new Planet().With(10, 20, "TestPlanet");
             var direction = directionManager.GetDefaultDirections().First(d => d.Code == "W");
-            var rover = new Rover();
+            var rover = context.Resolve<Rover>();
             rover.Land(planet, direction);
 
             rover.Move();
