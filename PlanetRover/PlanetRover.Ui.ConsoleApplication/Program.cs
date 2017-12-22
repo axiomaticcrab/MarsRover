@@ -16,19 +16,14 @@ namespace PlanetRover.Ui.ConsoleApplication
 {
     static class Program
     {
-        private static ContainerFactory ContainerFactory;
-        private static IWindsorContainer Container;
-        private static IPlanetManager PlanetManager;
-        private static IRoverManager RoverManager;
-        private static IDirectionManager DirectionManager;
-        private static ICommandManager CommandManager;
+        private static readonly ContainerFactory ContainerFactory;
+        private static readonly IWindsorContainer Container;
+        private static readonly IPlanetManager PlanetManager;
+        private static readonly IRoverManager RoverManager;
+        private static readonly IDirectionManager DirectionManager;
+        private static readonly ICommandManager CommandManager;
 
         static Program()
-        {
-           
-        }
-
-        static void Main()
         {
             ContainerFactory = new ContainerFactory();
             Container = ContainerFactory.Get();
@@ -36,6 +31,11 @@ namespace PlanetRover.Ui.ConsoleApplication
             RoverManager = Container.Resolve<IRoverManager>();
             DirectionManager = ContainerFactory.Resolve<IDirectionManager>();
             CommandManager = ContainerFactory.Resolve<ICommandManager>();
+        }
+
+        static void Main()
+        {
+
 
             var planetSizeConverter = RequestData<DefaultPositionConverter>("Provide planet's top left corner position with whitespaces.");
             var planet = PlanetManager.CreatePlanet(planetSizeConverter.X, planetSizeConverter.Y, "Mars");
@@ -44,9 +44,9 @@ namespace PlanetRover.Ui.ConsoleApplication
             var firstRover = CreateRover(firstRoverInfo, planet);
             var firstRoverCommands = RequestData<DefaultCommandConverter>("Provide commands for first rover");
 
-            //var secondRoverInfo = RequestData<DefaultRoverInfoConverter>("Provide second rover's information");
-            //var secondRover = CreateRover(secondRoverInfo, planet);
-            //var secondRoverCommands = RequestData<DefaultCommandConverter>("Provide commands for second rover");
+            var secondRoverInfo = RequestData<DefaultRoverInfoConverter>("Provide second rover's information");
+            var secondRover = CreateRover(secondRoverInfo, planet);
+            var secondRoverCommands = RequestData<DefaultCommandConverter>("Provide commands for second rover");
 
             CommandRover(firstRover, firstRoverCommands);
             Console.WriteLine(firstRover.ToString());
