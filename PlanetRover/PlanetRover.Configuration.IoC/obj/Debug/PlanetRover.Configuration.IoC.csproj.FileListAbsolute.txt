@@ -7,3 +7,11 @@ C:\Users\hp\Documents\GitHub\HbMarsRover\PlanetRover\PlanetRover.Configuration.I
 C:\Users\hp\Documents\GitHub\HbMarsRover\PlanetRover\PlanetRover.Configuration.IoC\obj\Debug\PlanetRover.Configuration.IoC.dll
 C:\Users\hp\Documents\GitHub\HbMarsRover\PlanetRover\PlanetRover.Configuration.IoC\obj\Debug\PlanetRover.Configuration.IoC.pdb
 C:\Users\hp\Documents\GitHub\HbMarsRover\PlanetRover\PlanetRover.Configuration.IoC\obj\Debug\PlanetRover.Configuration.IoC.csprojResolveAssemblyReference.cache
+C:\Users\hp\Documents\GitHub\HbMarsRover\PlanetRover\PlanetRover.Configuration.IoC\bin\Debug\PlanetRover.Module.Common.dll
+C:\Users\hp\Documents\GitHub\HbMarsRover\PlanetRover\PlanetRover.Configuration.IoC\bin\Debug\PlanetRover.Module.Common.pdb
+C:\Users\hp\Documents\GitHub\HbMarsRover\PlanetRover\PlanetRover.Configuration.IoC\bin\Debug\PlanetRover.Module.CommandModule.dll
+C:\Users\hp\Documents\GitHub\HbMarsRover\PlanetRover\PlanetRover.Configuration.IoC\bin\Debug\PlanetRover.Module.PlanetModule.dll
+C:\Users\hp\Documents\GitHub\HbMarsRover\PlanetRover\PlanetRover.Configuration.IoC\bin\Debug\PlanetRover.Module.RoverModule.dll
+C:\Users\hp\Documents\GitHub\HbMarsRover\PlanetRover\PlanetRover.Configuration.IoC\bin\Debug\PlanetRover.Module.CommandModule.pdb
+C:\Users\hp\Documents\GitHub\HbMarsRover\PlanetRover\PlanetRover.Configuration.IoC\bin\Debug\PlanetRover.Module.PlanetModule.pdb
+C:\Users\hp\Documents\GitHub\HbMarsRover\PlanetRover\PlanetRover.Configuration.IoC\bin\Debug\PlanetRover.Module.RoverModule.pdb

@@ -47,10 +47,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Factory\ContainerFactory.cs" />
+    <Compile Include="Installer\ModuleInstaller.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PlanetRover.Module.CommandModule\PlanetRover.Module.CommandModule.csproj">
+      <Project>{04006AF0-2662-44E2-9141-EBCFB7C0422A}</Project>
+      <Name>PlanetRover.Module.CommandModule</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PlanetRover.Module.Common\PlanetRover.Module.Common.csproj">
+      <Project>{A0B19982-3163-4EF3-B8A0-7D9B8FB5A133}</Project>
+      <Name>PlanetRover.Module.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PlanetRover.Module.PlanetModule\PlanetRover.Module.PlanetModule.csproj">
+      <Project>{7474F3DE-C6AB-4DDF-B093-9336A14CBA8E}</Project>
+      <Name>PlanetRover.Module.PlanetModule</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PlanetRover.Module.RoverModule\PlanetRover.Module.RoverModule.csproj">
+      <Project>{FAB0765B-95FD-4A17-9500-FDD70D35F8BC}</Project>
+      <Name>PlanetRover.Module.RoverModule</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
